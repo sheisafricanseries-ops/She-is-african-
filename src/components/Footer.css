@@ -1,0 +1,88 @@
+.manifesto {
+  text-align: center; padding: 100px 48px;
+  border-top: 1px solid rgba(255,107,53,0.3);
+  position: relative; overflow: hidden;
+}
+
+.manifesto::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(255,107,53,0.06), transparent);
+}
+
+.manifesto-lines {
+  max-width: 700px; margin: 0 auto;
+}
+
+.manifesto-line {
+  font-size: clamp(20px, 3vw, 32px);
+  font-weight: 400; line-height: 1.5;
+  color: var(--sand); margin-bottom: 4px;
+}
+
+.manifesto-line.accent { 
+  color: var(--afro-yellow); font-style: italic; 
+}
+
+.manifesto-line.bold { 
+  color: var(--sand-light); font-weight: 700; font-size: clamp(24px, 4vw, 42px); 
+}
+
+.channel-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px; padding: 24px 32px;
+  display: flex; gap: 32px; align-items: center;
+  transition: border-color 0.3s;
+}
+
+.channel-card:hover { border-color: var(--afro-orange); }
+
+.channel-icon {
+  width: 60px; height: 60px; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--afro-red), var(--afro-orange));
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px;
+}
+
+.channel-info h3 {
+  font-size: 28px; color: var(--sand-light);
+  margin-bottom: 8px;
+}
+
+.channel-info p {
+  font-size: 18px; color: var(--muted);
+  line-height: 1.7;
+}
+
+.channel-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+footer {
+  padding: 48px;
+  border-top: 1px solid rgba(255,107,53,0.2);
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 20px;
+}
+
+footer .footer-logo {
+  font-size: 18px; color: var(--afro-yellow);
+  font-style: italic;
+}
+
+footer p {
+  font-size: 10px; letter-spacing: 2px;
+  color: var(--muted); text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .manifesto { padding: 60px 24px; }
+  .channel-card { flex-direction: column; padding: 32px 24px; text-align: center; }
+  .channel-actions { justify-content: center; }
+  footer { padding: 32px 24px; flex-direction: column; text-align: center; }
+}

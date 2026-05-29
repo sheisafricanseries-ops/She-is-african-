@@ -1,0 +1,76 @@
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px; 
+  align-items: start;
+  margin-top: 48px;
+}
+
+.about-text p {
+  font-size: 20px; line-height: 1.9;
+  color: var(--text); margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.about-text p strong { 
+  color: var(--afro-orange); 
+  font-weight: 700; 
+}
+
+.about-quote {
+  border-left: 3px solid var(--afro-orange);
+  padding: 32px;
+  margin-bottom: 48px;
+  position: relative;
+}
+
+.about-quote blockquote {
+  font-size: 26px; font-style: italic;
+  color: var(--afro-orange); line-height: 1.5;
+  font-weight: 600;
+}
+
+.about-quote cite {
+  display: block; margin-top: 20px;
+  font-size: 11px; letter-spacing: 3px;
+  color: var(--text); font-style: normal;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* Typographic Stats */
+.stats-typographic {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 80px;
+  margin-top: 80px;
+}
+
+.stat-line {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.stat-huge {
+  font-size: 72px;
+  font-weight: 900;
+  color: var(--text);
+  line-height: 0.8;
+}
+
+.stat-desc {
+  font-size: 14px;
+  letter-spacing: 4px;
+  color: var(--afro-orange);
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr; gap: 48px; }
+  .stat-huge { font-size: 56px; }
+  .stat-desc { font-size: 12px; }
+}

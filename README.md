@@ -1,22 +1,16 @@
-# She-is-african-
-An animated anthology series telling African stories across time, culture, and identity — told by Imani, a teenage griot.
-# She Is African
+# React + Vite
 
-An animated anthology series on YouTube telling the stories of African people — their lives, their history, their everyday moments, their extraordinary ones.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Girls and boys. Women and men. The ancient and the present. Told by Imani — a teenage griot from southern Nigeria who refuses to let African stories disappear.
+Currently, two official plugins are available:
 
-## What This Is
-- Animated anthology series on YouTube
-- Pan-African — 54 countries, thousands of stories
-- Short episodes, different story every episode
-- Spans history, community, and personal stories
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## The Griot
-Imani is a teenage girl from southern Nigeria. Everyone comes to her. She has words for other people's pain. But privately she carries one question she cannot answer — *what exactly is life?*
+## React Compiler
 
-## Find Us
-- YouTube: She Is African
-- Email: sheisafrican@gmail.com
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-*No story is too small. No story is too old. If it is African — it belongs here.*
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  /* Dark Cinematic Aesthetic */
+  --bg: transparent;
+  --surface: rgba(20, 10, 10, 0.7);
+  --border: rgba(212, 77, 34, 0.3);
+  
+  /* Light Text Tones for contrast */
+  --text: #fdf5e6;
+  --muted: #a89f91;
+  --ink-light: #fdf5e6;
+  
+  /* Earthy & Vibrant Afro Accents */
+  --afro-orange: #d44d22;
+  --afro-yellow: #b58012;
+  --afro-red: #ab2733;
+  --afro-green: #1a7a53;
+  --afro-indigo: #231682;
+}
+
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+}
+
+html { 
+  scroll-behavior: smooth; 
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Cormorant Garamond', serif;
+  overflow-x: hidden;
+  transition: background-color 0.5s ease;
+}
+
+/* Paper Grain overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9997;
+  opacity: 0.3;
+}
+
+/* Animated Pattern Overlay */
+body::after {
+  content: '';
+  position: fixed; inset: 0; opacity: 0.05;
+  background-image: repeating-linear-gradient(
+    45deg,
+    var(--text) 0px, var(--text) 1px,
+    transparent 1px, transparent 40px
+  ),
+  repeating-linear-gradient(
+    -45deg,
+    var(--text) 0px, var(--text) 1px,
+    transparent 1px, transparent 40px
+  );
+  animation: patternShift 30s linear infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes patternShift {
+  from { background-position: 0 0, 0 0; }
+  to { background-position: 80px 80px, -80px 80px; }
+}
+
+/* Typography Classes */
+.font-playfair { font-family: 'Playfair Display', serif; }
+.font-cormorant { font-family: 'Cormorant Garamond', serif; }
+.font-space { font-family: 'Space Mono', monospace; }
+
+.section-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px; letter-spacing: 4px;
+  color: var(--afro-orange); text-transform: uppercase;
+  margin-bottom: 16px; display: block;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 700; line-height: 1.1;
+  color: var(--text); margin-bottom: 24px;
+}
+.section-title em { color: var(--afro-orange); font-style: italic; }
+
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: var(--text);
+  color: #050202; /* Dark color since button background is light */
+  font-family: 'Space Mono', monospace;
+  font-size: 11px; letter-spacing: 2px;
+  text-transform: uppercase; text-decoration: none;
+  border-radius: 4px; transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+  border: none;
+  font-weight: bold;
+}
+.btn:hover { background: var(--afro-orange); color: #fff; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(212,77,34,0.2); }
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--text);
+  color: var(--text);
+  margin-left: 12px;
+}
+.btn-outline:hover { background: rgba(43,29,20,0.05); color: var(--text); }

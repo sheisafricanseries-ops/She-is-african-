@@ -1,0 +1,55 @@
+.imani-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 32px 48px;
+  position: relative; 
+  overflow: hidden;
+  margin-top: 48px;
+}
+
+.imani-section::before {
+  content: 'IMANI';
+  position: absolute; right: -20px; top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  font-family: 'Playfair Display', serif;
+  font-size: 120px; font-weight: 900;
+  color: rgba(255,107,53,0.04);
+  pointer-events: none; white-space: nowrap;
+}
+
+.imani-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  position: relative;
+  z-index: 2;
+}
+
+.imani-stat { margin-bottom: 24px; }
+
+.imani-stat-label {
+  font-size: 10px; letter-spacing: 3px;
+  color: var(--muted); text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.imani-stat-value {
+  font-size: 20px; color: var(--sand-light);
+}
+
+.imani-contradiction {
+  grid-column: 1 / -1;
+  padding: 20px 24px; background: rgba(211,63,73,0.15);
+  border: 1px solid rgba(211,63,73,0.3);
+  border-radius: 10px; margin-top: 8px;
+}
+
+.imani-contradiction p {
+  font-size: 19px; font-style: italic;
+  color: var(--sand-light); line-height: 1.8;
+}
+
+@media (max-width: 900px) {
+  .imani-grid { grid-template-columns: 1fr; gap: 32px; }
+  .imani-section { padding: 36px 28px; }
+}

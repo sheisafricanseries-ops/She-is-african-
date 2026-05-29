@@ -1,0 +1,114 @@
+.layer-legend {
+  display: flex; gap: 32px; margin: 32px 0 64px; flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex; align-items: center; position: relative;
+}
+
+.legend-item span {
+  font-size: 11px; color: var(--muted); letter-spacing: 2px; font-weight: bold;
+}
+
+.legend-item::before {
+  content: ''; position: absolute; bottom: -8px; left: 0; width: 20px; height: 2px;
+}
+.legend-item.personal::before { background: var(--afro-orange); }
+.legend-item.community::before { background: var(--afro-green); }
+.legend-item.historical::before { background: var(--afro-indigo); }
+
+.episodes-list {
+  display: flex; flex-direction: column; gap: 48px;
+}
+
+.episode-row {
+  position: relative;
+  padding: 48px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+}
+
+.ep-bg-num {
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: clamp(120px, 20vw, 240px);
+  font-weight: 900;
+  color: rgba(253, 245, 230, 0.03);
+  z-index: 0;
+  pointer-events: none;
+  transition: color 0.5s ease;
+}
+
+.episode-row:hover .ep-bg-num {
+  color: rgba(253, 245, 230, 0.08);
+}
+
+.ep-hover-img {
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  transform: translateY(-50%) scale(0.9);
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 1;
+  pointer-events: none;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 70%);
+  mask-image: radial-gradient(ellipse at center, black 40%, transparent 70%);
+}
+
+.episode-row:hover .ep-hover-img {
+  opacity: 0.6;
+  transform: translateY(-50%) scale(1);
+}
+
+.ep-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 600px;
+  margin-left: 15%;
+}
+
+.ep-header {
+  display: flex; align-items: center; gap: 16px; margin-bottom: 16px; flex-wrap: wrap;
+}
+
+.ep-layer {
+  display: inline-block; padding: 4px 16px;
+  border-radius: 20px; font-size: 10px; font-weight: bold;
+  letter-spacing: 2px; text-transform: uppercase;
+}
+
+.ep-layer.personal { background: rgba(212,77,34,0.1); color: var(--afro-orange); border: 1px solid rgba(212,77,34,0.3); }
+.ep-layer.community { background: rgba(26,122,83,0.1); color: var(--afro-green); border: 1px solid rgba(26,122,83,0.3); }
+.ep-layer.historical { background: rgba(35,22,130,0.1); color: var(--afro-indigo); border: 1px solid rgba(35,22,130,0.3); }
+
+.ep-region {
+  font-size: 12px; color: var(--muted); letter-spacing: 2px; text-transform: uppercase;
+}
+
+.ep-title {
+  font-size: clamp(32px, 5vw, 48px); color: var(--text);
+  margin-bottom: 16px; transition: color 0.3s;
+}
+
+.episode-row:hover .ep-title {
+  color: var(--afro-orange);
+}
+
+.ep-seed {
+  font-size: 20px; color: var(--muted);
+  line-height: 1.8; font-style: italic;
+}
+
+@media (max-width: 900px) {
+  .ep-content { margin-left: 0; }
+  .ep-hover-img { right: 0; width: 200px; height: 200px; }
+}
